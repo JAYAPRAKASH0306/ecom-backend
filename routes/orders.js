@@ -10,7 +10,7 @@ const router = require("express").Router();
 
 router.post("/", auth, async (req, res) => {
   const newOrder = new Order(req.body);
-
+console.log(newOrder);
   try {
     const savedOrder = await newOrder.save();
     res.status(200).send(savedOrder);
